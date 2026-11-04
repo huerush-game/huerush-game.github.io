@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ink Trick: Brain Reflex Game for Android</title>
+  <meta name="description" content="A fast brain reflex game built on the Stroop effect. Tap the right color before time runs out. Free on Android, plays offline, no account needed.">
+  <meta name="theme-color" content="#15102E">
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="preload" href="assets/rubik.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ink Trick: Brain Reflex Game">
+  <meta property="og:description" content="Your eyes read one color. The ink shows another. Can you tap the right one in time?">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">
+      <img src="assets/icon.png" width="40" height="40" alt="">
+      <span>Ink Trick</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#modes">Modes</a>
+      <a href="#themes">Themes</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="cta cta-small" href="https://play.google.com/store/apps/details?id=com.inktrick">Get it on Google Play</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Your brain will <em>lie</em> to you.</h1>
+        <p>A color word, the wrong ink, about a second to decide. Try a few rounds right here.</p>
+        <a class="cta" href="https://play.google.com/store/apps/details?id=com.inktrick">Get it on Google Play</a>
+      </div>
+
+      <div class="demo" id="demo" aria-label="Playable Ink Trick demo">
+        <div class="demo-top">
+          <span id="rule" class="rule">Tap the word</span>
+          <span class="streak">Streak <b id="streak">0</b></span>
+        </div>
+        <div class="timer"><div id="bar"></div></div>
+        <div class="word-wrap">
+          <div id="word" class="word" aria-live="polite">BLUE</div>
+        </div>
+        <div id="answers" class="answers"></div>
+        <div id="over" class="over" hidden>
+          <p id="overTitle" class="over-title"></p>
+          <p id="overText"></p>
+          <button id="again" class="again" type="button">Play again</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screens reveal">
+      <div class="head">
+        <h2>It gets harder, fast.</h2>
+        <p>Buttons shuffle, more colors join in, and some rounds ask for the ink instead of the word.</p>
+      </div>
+      <div class="strip" tabindex="0" aria-label="Game screenshots">
+        <img src="assets/01_gameplay.jpg" width="563" height="1000" loading="lazy" alt="Gameplay: the word PURPLE with five colored answer buttons">
+        <img src="assets/02_hard_level.jpg" width="563" height="1000" loading="lazy" alt="A harder level with more colors on screen">
+        <img src="assets/03_game_over.jpg" width="563" height="1000" loading="lazy" alt="Game over screen showing the final score">
+        <img src="assets/00_home.jpg" width="563" height="1000" loading="lazy" alt="Home screen with the Play button and game modes">
+        <img src="assets/05_how_to_play.jpg" width="563" height="1000" loading="lazy" alt="How to play screen explaining the rules">
+      </div>
+    </section>
+
+    <section class="modes reveal" id="modes">
+      <h2>Six ways to play</h2>
+      <div class="bento">
+        <article class="tile t-classic"><h3>Classic</h3><p>3 lives. How far can you go?</p></article>
+        <article class="tile t-rush"><h3>Time Rush</h3><p>30 seconds. Every hit buys time.</p></article>
+        <article class="tile t-endless"><h3>Endless</h3><p>One mistake and it is over.</p></article>
+        <article class="tile t-daily"><h3>Daily Challenge</h3><p>A fresh twist every day.</p></article>
+        <article class="tile t-zen"><h3>Zen</h3><p>No timer, no lives. Just flow.</p></article>
+        <article class="tile t-friend"><h3>Friend Challenge</h3><p>Same rounds, same rules. Beat your friend.</p></article>
+      </div>
+    </section>
+
+    <section class="themes reveal" id="themes">
+      <h2>Spend your coins on new looks</h2>
+      <p class="lede">Earn coins as you play, then unlock themes, tap effects and boosts.</p>
+      <ul class="swatches">
+        <li style="--a:#15102E;--b:#6C4DFF;--c:#FF4D8D">Default</li>
+        <li style="--a:#0A0014;--b:#FF00E5;--c:#00F0FF">Neon</li>
+        <li style="--a:#053049;--b:#1FA3FF;--c:#2EE6C8">Ocean</li>
+        <li style="--a:#4A1233;--b:#FF4D6D;--c:#FF8A2B">Sunset</li>
+        <li style="--a:#120A33;--b:#7A3DFF;--c:#FF4DD2">Galaxy</li>
+        <li style="--a:#0E3B2A;--b:#1FA38A;--c:#2FD37A">Forest</li>
+        <li class="light" style="--a:#FFE3F1;--b:#FF9AD8;--c:#8AB8FF">Candy</li>
+        <li style="--a:#1C1608;--b:#C7780A;--c:#FFC21A">Royal Gold</li>
+      </ul>
+    </section>
+
+    <section class="facts reveal">
+      <img src="assets/00_home.jpg" width="563" height="1000" loading="lazy" alt="Ink Trick home screen">
+      <div>
+        <h2>Small, offline, no sign-up.</h2>
+        <dl>
+          <div><dt>Plays offline</dt><dd>Your progress stays on your phone.</dd></div>
+          <div><dt>No account</dt><dd>Open it and play.</dd></div>
+          <div><dt>About 17 MB</dt><dd>Runs smoothly on budget phones.</dd></div>
+          <div><dt>Color assist</dt><dd>An option for players with color vision deficiency.</dd></div>
+          <div class="wide"><dt>Six languages</dt><dd>English, বাংলা, हिन्दी, Español, Português, Bahasa Indonesia.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="faq reveal" id="faq">
+      <h2>Questions</h2>
+      <details>
+        <summary>Is Ink Trick free?</summary>
+        <p>Yes. The game is free and shows ads. Rewarded ads are always your choice.</p>
+      </details>
+      <details>
+        <summary>Can I earn real money from coins?</summary>
+        <p>No. Coins are only for use inside the game, on themes, tap effects and boosts. They cannot be cashed out.</p>
+      </details>
+      <details>
+        <summary>Which phones does it run on?</summary>
+        <p>Android phones and tablets, through Google Play.</p>
+      </details>
+      <details>
+        <summary>What data does it collect?</summary>
+        <p>The game has no account and no server of its own. Ads may use device data, as the <a href="https://ahsanurrahman.me/ink-trick/privacy-policy.html">privacy policy</a> explains.</p>
+      </details>
+    </section>
+
+    <section class="closing reveal">
+      <h2>Think you're fast?</h2>
+      <p>Your brain might disagree.</p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.inktrick">Get it on Google Play</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Ahsanur Soft</span>
+    <a href="https://ahsanurrahman.me/ink-trick/privacy-policy.html">Privacy policy</a>
+    <a href="https://ahsanurrahman.me/ink-trick/terms.html">Terms</a>
+    <a href="mailto:ahsanursabbir@gmail.com">ahsanursabbir@gmail.com</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
